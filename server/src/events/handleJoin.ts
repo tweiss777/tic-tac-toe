@@ -10,7 +10,7 @@ export function handleJoin(io: Server, socket: Socket, roomId: string) {
   const room: GameRoom = rooms[roomId];
 
   if (room.players.length >= 2) {
-    socket.emit("error", "Room is full");
+    socket.emit("errorMessage", "Room is full");
     return;
   }
 
