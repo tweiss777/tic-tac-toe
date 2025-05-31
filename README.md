@@ -104,10 +104,8 @@ yarn dev
 Runs the frontend locally at `http://localhost:5173/` (default Vite port).
 
 ### ⚙️ Environment Variables
-
-Make sure the client knows where to find the backend. Create a `.env` file inside `client/`:
-
-
+ - Make sure to add PORT to server's env variable or it defaults to 3000
+ - For the client env ensure that VITE_SOCKET_URL points to the server
 > Adjust the port if your server runs on a different one.
 
 ---
