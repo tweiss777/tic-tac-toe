@@ -3,6 +3,10 @@ import { rooms, createNewGame } from "../state/game.utils";
 import { GameRoom } from "../types/game.types";
 
 export function handleJoin(io: Server, socket: Socket, roomId: string) {
+  console.log(rooms)
+  console.log(roomId)
+  console.log(socket.id)
+  
   if (!rooms[roomId]) {
     rooms[roomId] = createNewGame();
   }

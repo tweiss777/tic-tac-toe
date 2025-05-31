@@ -3,7 +3,10 @@ import { PlayerMove } from "../types/game.types";
 import { rooms, checkWinner } from "../state/game.utils";
 
 export function handleMove(io: Server, socket: Socket, move: PlayerMove) {
+
   console.log(rooms)
+  console.log(socket.id)
+  console.log(move)  
   const room = rooms[move.roomId];
   if (!room) {
     socket.emit("errorMessage", "Invalid Room!");

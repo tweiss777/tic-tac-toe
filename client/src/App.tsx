@@ -13,6 +13,7 @@ function App() {
     socket.emit("join", roomId);
   
     socket.on("joined", (data) => {
+      console.log(data)
       setBoard(data.board);
       setCurrentPlayer(data.currentPlayer);
   
@@ -20,21 +21,25 @@ function App() {
     });
   
     socket.on("start", (data) => {
+      console.log(data)
       setBoard(data.board);
       setCurrentPlayer(data.currentPlayer);
     });
   
     socket.on("moveMade", (data) => {
+      console.log(data)
       setBoard(data.board);
       setCurrentPlayer(data.currentPlayer);
     });
   
     socket.on("gameOver", (data) => {
+      console.log(data)
       setBoard(data.board);
       setWinner(data.winner || "No one");
     });
   
     socket.on("errorMessage", (msg) => {
+      console.log(msg)
       alert("Error: " + msg);
     });
   
